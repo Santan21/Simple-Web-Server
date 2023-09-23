@@ -10,16 +10,13 @@ res.end('This is the overview');
     else if (pathName === '/product') {
         res.end('This is the product');
     }
-    else 
+    else {
         res.writeHead(404, {
-        
+        'Content-type': 'text/html',
+        'my-own-header': 'hello-world'
     });
-    
-
-
-         res.end('A Simple Web Server')     
-
-    });
+         res.end('<h1>Page not founnd!<h1>')     
+    }});
 
     server.listen(4000, '127.0.0.1', () => {
 
